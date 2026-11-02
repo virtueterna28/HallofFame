@@ -1,0 +1,196 @@
+/* Royal palette: midnight blue, sapphire and warm gold */
+:root {
+  --royal-navy: #081735;
+  --royal-blue: #122b60;
+  --royal-blue-light: #1d4380;
+  --royal-gold: #f4c75e;
+  --royal-gold-light: #ffe7a0;
+  --royal-cream: #fff6dc;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: background 400ms ease, color 300ms ease;
+}
+
+body.royal-mode {
+  color: #fff6dc;
+  background: linear-gradient(145deg, #07132c 0%, #102957 48%, #081735 100%);
+  background-attachment: fixed;
+}
+
+.royal-mode header,
+.royal-mode footer {
+  color: var(--royal-cream);
+  background: linear-gradient(110deg, #07132c, #17376f 55%, #0a1937) !important;
+  border-bottom: 1px solid rgba(244, 199, 94, .55);
+}
+
+.royal-mode footer {
+  border-top: 1px solid rgba(244, 199, 94, .55);
+  border-bottom: 0;
+}
+
+.royal-mode section:not(#beranda) {
+  position: relative;
+  color: var(--royal-cream);
+  background: linear-gradient(135deg, #0a1937, #112c5a 55%, #091832) !important;
+}
+
+.royal-mode section:not(#beranda)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(180px, 38vw);
+  height: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--royal-gold), transparent);
+}
+
+.royal-mode #beranda {
+  border-bottom: 2px solid rgba(244, 199, 94, .8);
+}
+
+/* Override the light Tailwind surfaces with layered royal blues and gold trim. */
+.royal-mode .bg-white:not(a),
+.royal-mode .bg-slate-50:not(a),
+.royal-mode .bg-slate-100:not(a),
+.royal-mode .bg-slate-200:not(a),
+.royal-mode .bg-blue-50:not(a) {
+  color: var(--royal-cream) !important;
+  background: linear-gradient(145deg, #102957, #0b1d40) !important;
+}
+
+.royal-mode .group {
+  border: 1px solid rgba(244, 199, 94, .52) !important;
+  background: linear-gradient(150deg, #18376c, #0b1b3a) !important;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .26), inset 0 1px rgba(255, 231, 160, .12);
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.royal-mode .group:hover {
+  transform: translateY(-5px);
+  border-color: var(--royal-gold) !important;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, .38), 0 0 22px rgba(244, 199, 94, .15);
+}
+
+.royal-mode .text-slate-900,
+.royal-mode .text-slate-800,
+.royal-mode .text-slate-700,
+.royal-mode .text-slate-600,
+.royal-mode .text-slate-500,
+.royal-mode .text-slate-400 {
+  color: #fff0c2 !important;
+}
+
+.royal-mode .text-\[\#233686\],
+.royal-mode .text-blue-200 {
+  color: var(--royal-gold) !important;
+}
+
+.royal-mode .border-slate-100,
+.royal-mode .border-slate-200,
+.royal-mode .border-slate-200\/60,
+.royal-mode .border-slate-200\/80,
+.royal-mode .border-slate-300 {
+  border-color: rgba(244, 199, 94, .35) !important;
+}
+
+.royal-mode input[type="text"] {
+  color: var(--royal-cream);
+  background: #081735;
+  border-color: rgba(244, 199, 94, .55);
+}
+
+.royal-mode input[type="text"]::placeholder {
+  color: #b8c5de;
+}
+
+.royal-mode a[href^="#"]:not(header a):not(#beranda a) {
+  color: var(--royal-gold);
+}
+
+.royal-mode header nav a {
+  color: var(--royal-cream);
+  background: transparent !important;
+}
+
+.royal-mode header nav a:hover {
+  color: var(--royal-gold) !important;
+}
+
+.royal-mode header > div > div:last-child a,
+.royal-mode #beranda a:first-of-type {
+  color: #10234a;
+  background: linear-gradient(135deg, #ffe7a0, #eab843) !important;
+}
+
+.royal-mode header > div > div:last-child a:hover,
+.royal-mode #beranda a:first-of-type:hover {
+  background: linear-gradient(135deg, #fff1c5, #f4c75e) !important;
+}
+
+.royal-mode .royal-toggle {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  color: #10234a;
+  font: 600 13px 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fff0bd, #eab843);
+  border: 1px solid #fff0bd;
+  border-radius: 999px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .35), 0 0 20px rgba(244, 199, 94, .22);
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.royal-toggle {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  color: #fff0c2;
+  font: 600 13px 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #102957, #07132c);
+  border: 1px solid var(--royal-gold);
+  border-radius: 999px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .35);
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.royal-toggle:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(244, 199, 94, .28);
+}
+
+.royal-toggle b {
+  font-size: 22px;
+  line-height: 1;
+  color: var(--royal-gold);
+}
+
+.royal-toggle:focus-visible,
+.royal-mode a:focus-visible,
+.royal-mode input:focus-visible {
+  outline: 3px solid var(--royal-gold-light);
+  outline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  .royal-toggle {
+    right: 14px;
+    bottom: 14px;
+    padding: 10px 13px;
+  }
+}
